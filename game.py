@@ -1,4 +1,4 @@
-import urllib
+import urllib.request
 import yaml
 from dataclasses import dataclass
 from typing import Hashable, List, Tuple, Union
@@ -15,8 +15,8 @@ class Game:
     def __init__(self, config_source: Union[str, dict]):
         if isinstance(config_source, str):
             if config_source.startswith("http"):
-                content = response = urllib.urlopen(config_source)
-                config = yaml.safe_load(f)
+                with urllib.request.urlopen(config_source) as response:
+                    config = yaml.safe_load(response.read())
             else:
                 with open(config_source, "r") as f:
                     config = yaml.safe_load(f)
