@@ -2,16 +2,22 @@ events:
   intro:
     event_text: Welcome to the adventure!
     options:
-      - Start over
-        intro
-      - Get to the end
-        winner
+      - 
+        - Start over
+        - intro
+      - 
+        - Get to the end
+        - winner
   winner:
-    event_text: Winner winner chicker dinner!
+    event_text: |
+                Winner winner, chicker dinner!
+                You've reached the end of the game.
     options:
-      - Play again
-        intro
-      - Quit
-        quit
+      - 
+        - Play again
+        - intro
+      - 
+        - Quit
+        - quit
   quit:
     event_text: See you next time
